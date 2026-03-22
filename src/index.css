@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* USA Palette — Navy, Crimson, White */
+    --background: 0 0% 100%;
+    --foreground: 220 30% 15%;
+
+    --card: 220 20% 97%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Primary: Navy Blue */
+    --primary: 220 60% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Crimson Red */
+    --secondary: 355 80% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent: Soft Blue */
+    --accent: 215 50% 92%;
+    --accent-foreground: 220 60% 22%;
+
+    /* Destructive */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 60% 22%;
+
+    --radius: 0.5rem;
+
+    /* Extended palette */
+    --navy-50: 220 30% 97%;
+    --navy-100: 220 30% 93%;
+    --navy-200: 220 30% 85%;
+    --navy-500: 220 60% 30%;
+    --navy-600: 220 60% 22%;
+    --navy-700: 220 60% 18%;
+    --navy-800: 220 55% 14%;
+    --navy-900: 220 50% 10%;
+
+    --red-50: 355 60% 97%;
+    --red-100: 355 60% 93%;
+    --red-400: 355 75% 55%;
+    --red-500: 355 80% 48%;
+    --red-600: 355 80% 40%;
+    --red-700: 355 75% 33%;
+
+    --blue-50: 215 50% 97%;
+    --blue-100: 215 50% 92%;
+    --blue-200: 215 50% 82%;
+    --blue-400: 215 55% 65%;
+
+    /* Shadows */
+    --shadow-soft: 0 2px 12px -3px hsl(220 30% 50% / 0.08);
+    --shadow-medium: 0 6px 24px -6px hsl(220 30% 50% / 0.12);
+    --shadow-strong: 0 16px 48px -12px hsl(220 30% 50% / 0.18);
+
+    /* Sidebar */
+    --sidebar-background: 220 60% 22%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 355 80% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 60% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 55% 30%;
+    --sidebar-ring: 355 80% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Georgia, serif;
+    @apply font-bold tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .container-gov {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .card-gov {
+    @apply bg-card rounded-lg border border-border p-6 transition-all duration-300;
+  }
+
+  .card-gov:hover {
+    border-color: hsl(var(--secondary) / 0.3);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .card-navy {
+    @apply rounded-lg p-6 transition-all duration-300 text-white;
+    background: hsl(var(--primary));
+  }
+
+  .card-navy h3, .card-navy h4 {
+    color: white;
+  }
+
+  .card-navy p {
+    color: hsl(0 0% 100% / 0.8);
+  }
+
+  .card-red {
+    @apply rounded-lg p-6 transition-all duration-300 text-white;
+    background: hsl(var(--secondary));
+  }
+
+  .badge-gov {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .link-gov {
+    @apply text-secondary hover:opacity-80 underline underline-offset-2 transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-gov-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-gov-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-gov-strong {
+    box-shadow: var(--shadow-strong);
+  }
+}
